@@ -1,0 +1,7 @@
+{
+    "require": {
+        "tymon/jwt-auth": "^2.0",
+        "amir/laravel-permission": "^1.4",
+        "spatie/laravel-permission": "^6.0"
+    }
+}
