@@ -1,0 +1,32 @@
+<body>
+  <div class="container">
+    <div class="login">
+      <div class="login-screen">
+        <div class="app-title">
+          <h1>Login</h1>
+        </div>
+        <div class="login-form">
+          <div class="control-group">
+            <input type="text" class="login-field" value="" placeholder="correo" [(ngModel)]="email" id="login-name">
+            <label  for="login-name"></label>
+          </div>
+          <div *ngIf="errorEmail" class="error-message">
+            {{ errorEmail }}
+          </div>
+          <div class="control-group">
+            <input type="password" class="login-field" value="" placeholder="password"[(ngModel)]="password" id="login-pass">
+            <label  for="login-pass"></label>
+          </div>
+          <div *ngIf="errorPassword" class="error-message">
+            {{ errorPassword }}
+          </div>
+          <div *ngIf="errorMessage" class="error-message">
+            {{ errorMessage }}
+          </div>
+          <a class="btn btn-primary btn-large btn-block" (click)="loguear()">Login</a>
+          <a class="login-link"  [routerLink]="['/registro']">No tienes cuenta ?</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>

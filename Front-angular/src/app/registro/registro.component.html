@@ -1,0 +1,67 @@
+<body>
+  <div class="container">
+    <div class="login">
+      <div class="login-screen">
+        <div class="app-title">
+          <h1>Registrarse</h1>
+        </div>
+        <div class="login-form">
+          <div class="control-group">
+            <input type="text" class="login-field" value="" placeholder="DNI" [(ngModel)]="dni" id="login-dni">
+            <label  for="login-dni"></label>
+          </div>
+          <div *ngIf="errorDni" class="error-message">
+            {{ errorDni }}
+          </div>
+          <div class="control-group">
+            <input type="text" class="login-field" value="" placeholder="nombre usuario" [(ngModel)]="nombre" id="login-name">
+            <label  for="login-name"></label>
+          </div>
+          <div *ngIf="errorNombre" class="error-message">
+            {{ errorNombre }}
+          </div>
+          <div class="control-group">
+            <input type="text" class="login-field" value="" placeholder="apellidos usuario" [(ngModel)]="apellidos" id="login-apellidos">
+            <label  for="login-apellidos"></label>
+          </div>
+          <div *ngIf="errorApellidos" class="error-message">
+            {{ errorApellidos }}
+          </div>
+          <div class="control-group">
+            <input type="text" class="login-field" value="" placeholder="correo" [(ngModel)]="email" id="login-correo" >
+            <label  for="login-correo"></label>
+          </div>
+          <div *ngIf="errorEmail" class="error-message">
+            {{ errorEmail }}
+          </div>
+          <div class="control-group">
+            <input type="text" class="login-field" value="" placeholder="telefono" [(ngModel)]="telefono" id="login-movil" (keyup)="validarEnteroPositivo($event)">
+            <label  for="login-movil"></label>
+          </div>
+          <div *ngIf="errorTelefono" class="error-message">
+            {{ errorTelefono }}
+          </div>
+          <div class="control-group">
+            <input type="password" class="login-field" value="" placeholder="password"[(ngModel)]="password" id="login-pass">
+            <label  for="login-pass"></label>
+          </div>
+          <div *ngIf="errorPasaword" class="error-message">
+            {{ errorPasaword }}
+          </div>
+          <div class="control-group">
+            <input type="password" class="login-field" value="" placeholder="confirmar password"[(ngModel)]="reppassword" id="login-Rpass">
+            <label  for="login-Rpass"></label>
+          </div>
+          <div *ngIf="errorRepetirPasword" class="error-message">
+            {{ errorRepetirPasword }}
+          </div>
+          <div *ngIf="errorMessage" class="error-message">
+            {{ errorMessage }}
+          </div>
+          <a class="btn btn-primary btn-large btn-block" (click)="registrarse()">Registrarse</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+

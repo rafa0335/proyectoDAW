@@ -1,0 +1,128 @@
+<body>
+  <nav class="navbar navbar-expand-md navbar-dark encabezado">
+    <div class="container-fluid">
+      <a href="" class="navbar-brand text-info fw-semibold fs-4 text-black">CursosGratis</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#menuLateral">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </div>
+    <section class="offcanvas offcanvas-start ocultable" id="menuLateral">
+      <div class="offcanvas-header" data-bs-theme="dark">
+        <h5 class="offcanvas-title text-black">CursosGratis</h5>
+        <button class="btn-open" type="button" aria-label="Close" data-bs-dismiss="offcanvas"></button>
+      </div>
+      <div class="offcanvas-body d-flex flex-column justify-content-between px-0">
+        <ul class="navbar-nav fs-5 justify-content-center">
+          <li class="nav-item p-3 py-md-1 text-white"><a class="nav-link text-black" [routerLink]="['/inicio']"> Cursos Disponibles</a></li>
+          <li class="nav-item p-3 py-md-1 text-white"><a class="nav-link text-black" (click)="mostrarFormulario()"> Editar perfil</a></li>
+          <li class="nav-item p-3 py-md-1 text-white"><button (click)="desloguearse()" class="btn-accion">Cerrar Sesión</button></li>
+          <li class="nav-item p-3 py-md-1 text-white"><button (click)="borrarCuenta()" class="btn-accion">Darse de Baja</button></li>
+        </ul>
+      </div>
+    </section>
+  </nav>
+  <div class="text-center">
+    <h1 class="   cabezera ">Cursos de {{nombreUsuario}}</h1>
+  </div>
+  <div *ngIf="mostrarTabla" class="text-center">
+    <!-- PrimeNG Table -->
+    <p-table
+      #dt1
+      [value]="cursos"
+      [paginator]="true"
+      [rows]="5"
+      [showCurrentPageReport]="true"
+      [tableStyle]="{'min-width': '50rem'}"
+      [globalFilterFields]="['nombreCurso', 'precio', 'plazas']">>
+      <ng-template pTemplate="caption">
+        <div class="flex" style="text-align: end">
+          <span class="p-input-icon-left">
+            <i class="pi pi-search "></i>
+            <input pInputText
+                   type="text"
+                   (input)="onInputChange($event, dt1)"
+                   placeholder="Search keyword"
+                   style="text-align: center"/>
+          </span>
+        </div>
+      </ng-template>
+      <ng-template pTemplate="header">
+        <tr class="border border-3 border-black cabezeraTabla">
+          <th pSortableColumn="nombreCurso" style="width: 20%">Nombre del Curso <p-sortIcon field="nombreCurso"></p-sortIcon></th>
+          <th pSortableColumn="precio" style="width: 20%">Precio <p-sortIcon field="precio"></p-sortIcon></th>
+          <th pSortableColumn="plazas" style="width: 20%">Plazas Disponibles <p-sortIcon field="plazas"></p-sortIcon></th>
+          <th class="datatableHeader" style="width: 20%">Descripción </th>
+          <th class="datatableHeader" style="width: 20%">Acción</th>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-curso>
+        <tr class="bg-dark-subtle border-2 border-black text-black cuerpo">
+          <td>{{curso.nombreCurso}}</td>
+          <td>{{curso.precio}}</td>
+          <td>{{curso.plazas}}</td>
+          <td>{{curso.descripcion}}</td>
+          <td>
+            <button (click)="desmatricularse(curso.id)" class="btn-accion ">Desmatricularse</button>
+           <button (click)="mostrarContenido(curso.contenido,curso.nombreCurso)" class="btn-accion">Mostrar Contenido</button>
+          </td>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="emptymessage">
+        <tr>
+          <td colspan="5">No courses found.</td>
+        </tr>
+      </ng-template>
+    </p-table>
+  </div>
+  <!-- Contenido del curso -->
+  <div *ngIf="mostrarContenidoCurso" class="custom-form-container custom-popup">
+    <button (click)="majenarContenido()" class="custom-close-button">&times;</button>
+    <form class="custom-form-horizontal">
+      <div class="custom-form-group-contenido">
+        <h1 class="custom-curso-title">{{nombreCursoContenido}}</h1>
+        <div class="custom-content-container">
+          <div class="custom-content-scroll">
+            <p style="white-space: pre-line;" >{{contenido}}</p>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+  <div *ngIf="!mostrarTabla">
+    <div class="message-container">
+      Aún no tienes cursos, ve a matricularte en uno pinchando <a class="link-button" [routerLink]="['/inicio']">aquí</a>!
+    </div>
+  </div>
+  <div *ngIf="mostrar" class="form-container">
+    <button (click)="mostrarFormulario()" class="close-button">&times;</button>
+    <form>
+      <label for="dni">dni</label>
+      <input type="text" id="dni" [(ngModel)]="dniUsuario" name="dni">
+      <div *ngIf="errordni" class="error-message">
+        {{ errordni }}
+      </div>
+      <label for="usuario">Nombre</label>
+      <input type="text" id="usuario" [(ngModel)]="nombreUsuario" name="nombre">
+      <label for="usuario">apellidos</label>
+      <input type="text" id="apellidos" [(ngModel)]="apellidosUsuario" name="apellidos">
+      <label for="correo">Correo</label>
+      <input type="email" id="correo" [(ngModel)]="correoUsuario" name="email">
+      <div *ngIf="errorEmail" class="error-message">
+        {{ errorEmail }}
+      </div>
+      <label for="correo">Teléfono</label>
+      <input type="email" id="telefono" [(ngModel)]="telefono" name="correo">
+      <label for="contrasena">Contraseña</label>
+      <input type="password" id="contrasena" [(ngModel)]="passwordUsuario" name="password">
+      <div *ngIf="errorMessage" class="error-message">
+        {{ errorMessage }}
+      </div>
+      <input type="submit" value="Editar" class="boton-editar text-black mt-2" (click)="editarPerfil()">
+    </form>
+  </div>
+</body>
+
+
+
+
+

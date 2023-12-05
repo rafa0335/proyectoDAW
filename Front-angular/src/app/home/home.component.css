@@ -1,0 +1,86 @@
+.encabezado{
+  background-color:#66DBFA ;
+}
+.ocultable{
+  background-color: #3BA9FF;
+}
+/* Estilos para el botón "Añadir" */
+.btn-accion {
+  background-color: #DAEEF4;
+  color: black;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  margin-right: 10px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+.btn-accion:hover {
+  background-color: #C5DCE3;
+}
+
+.cuerpo:hover{
+  background-color: #34D4ED  !important;
+}
+.nav-link {
+  cursor: pointer;
+  width: max-content;
+}
+.datatableHeader:hover{
+  background-color: #e9ecef  !important;
+}
+.enlace-curso:hover {
+  color: #000000;
+}
+.bg-dark-subtle.border-2.border-black.text-black.cuerpo td:not(:first-child) {
+  text-align: center;
+}
+.cabezeraTabla{
+  text-align: center;
+}
+input[type="text"]{
+  width: 100%;
+  padding: 10px;
+  margin: 5px 0;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+/* MOSTRAR CONTENIDO ESTILOS PERSONALIZADOS */
+.custom-popup {
+  position: fixed;
+  top: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #ffffff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  max-height: 80vh;
+  overflow-y: auto;
+  padding: 20px;
+}
+.custom-close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: #ffffff;
+  border: none;
+  font-size: 40px;
+  cursor: pointer;
+}
+.custom-close-button:hover {
+  color: #e00;
+}
+.custom-curso-title {
+  text-align: center;
+  margin-bottom: 20px;
+  background-color: #5472ff;
+}
+.custom-content-container {
+  margin-top: 10px;
+}
+.custom-content-scroll {
+  max-height: 60vh;
+  overflow-y: auto;
+  padding-right: 10px;
+}

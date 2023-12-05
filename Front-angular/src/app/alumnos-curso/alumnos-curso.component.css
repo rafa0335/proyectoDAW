@@ -1,0 +1,86 @@
+
+/* curso-detalle.component.css */
+.encabezado{
+  color: black !important;
+  background-color: #66DBFA !important;
+
+}
+.cabezera {
+  text-align: center;
+  font-family:  Verdana, sans-serif;
+  background-color: #A5ECFF !important;
+  margin-bottom: 0;
+}
+.datatableHeader:hover{
+  background-color: #e9ecef  !important;
+}
+.custom-header h1 {
+  margin: 0;
+  background-color: #2196F3;
+  padding: 10px;
+  border-radius: 5px;
+  display: flex;
+  color: #ffffff; /* Asegura que el texto sea visible en el fondo azul */
+  justify-content: center;
+}
+.btn-volver {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #66DBFA;
+  color: black;
+  text-decoration: none;
+  border: none;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+.btn-volver:hover {
+  background-color: #30d0ff;
+}
+.color-red {
+  color: #ef4444;
+}
+.bg-dark-subtle.border-2.border-black.text-black.cuerpo td {
+  text-align: center;
+}
+.cabezeraTabla{
+  text-align: center;
+}
+.cuerpo:hover{
+  background-color: #34D4ED  !important;
+}
+.search-icon {
+  left: 15px;
+}
+.centrarCabezera{
+  position: relative !important;
+}
+.centrarIcono{
+  position: absolute !important;
+  top: 50%;
+  left: 60%;
+  transform: translate(-58%,-50%);
+}
+input[type="text"]{
+  width: 100%;
+  padding: 10px;
+  margin: 5px 0;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

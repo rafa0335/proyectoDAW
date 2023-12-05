@@ -1,0 +1,187 @@
+.encabezado{
+  background-color:#66DBFA ;
+
+}
+.ocultable{
+  background-color: #3BA9FF;
+}
+.cabezera {
+  text-align: center;
+  font-family:  Verdana, sans-serif;
+  background-color: #A5ECFF;
+  margin: 0;
+}
+/* Estilos para el botón "Añadir" */
+.btn-accion {
+  background-color: #DAEEF4;
+  color: black;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  width: max-content;
+  border-radius: 5px;
+  margin: 8px;
+}
+/* Estilos para el botón "Añadir" cuando se pasa el cursor sobre él */
+.btn-accion:hover {
+  background-color: #C5DCE3; /* Cambia el color al pasar el cursor */
+}
+.message-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #007bff;
+  color: #fff;
+  text-align: center;
+  font-size: 24px;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+.link-button {
+  text-decoration: none;
+  color: #fff;
+  font-weight: bold;
+}
+.link-button:hover {
+  text-decoration: underline;
+}
+.nav-link{
+  cursor: pointer;
+  width: max-content;
+}
+.form-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #66DCFF;
+  width: 100%;
+  max-width: 400px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  z-index: 1; /* Asegura que el formulario esté por encima de la tabla */
+}
+
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  font-size: 50px;
+  color: #888;
+  padding: 0;
+  margin: 0;
+  line-height: 16px;
+  background-color: transparent;
+  border: none;
+}
+.close-button:hover {
+  color: #e00;
+}
+label {
+  font-weight: bold;
+  display: block;
+  margin-top: 10px;
+}
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  margin: 5px 0;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+input[type="submit"] {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+.error-message {
+  background-color: #ff5858;
+  color: white;
+  padding: 5px;
+  border-radius: 5px;
+  text-align: center;
+  margin: 10px;
+}
+.bg-dark-subtle.border-2.border-black.text-black.cuerpo td:not(:first-child) {
+  text-align: center;
+}
+.cabezeraTabla{
+  text-align: center;
+}
+.boton-editar{
+  background-color: #DAEEF4 ; ;
+}
+.cuerpo:hover{
+  background-color: #34D4ED  !important;
+}
+.boton-editar:hover{
+  background-color: #C5DCE3;
+}
+.datatableHeader:hover{
+  background-color: #e9ecef  !important;
+}
+/* MOSTRAR CONTENIDO ESTILOS PERSONALIZADOS */
+.custom-popup {
+  position: fixed;
+  top: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #ffffff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  max-height: 80vh;
+  overflow-y: auto;
+  padding: 20px;
+}
+.custom-close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: #ffffff;
+  border: none;
+  font-size: 40px;
+  cursor: pointer;
+}
+.custom-close-button:hover {
+  color: #e00;
+}
+.custom-curso-title {
+  text-align: center;
+  margin-bottom: 20px;
+  background-color: #5472ff;
+}
+.custom-content-container {
+  margin-top: 10px;
+}
+.custom-content-scroll {
+  max-height: 60vh;
+  overflow-y: auto;
+  padding-right: 10px;
+}
+
+@media (max-width: 768px) {
+  form {
+    padding: 10px;
+  }
+  label {
+    font-size: 16px;
+  }
+  input[type="text"],
+  input[type="email"],
+  input[type="password"] {
+    font-size: 16px;
+  }
+
+  input[type="submit"] {
+    font-size: 18px;
+  }
+}

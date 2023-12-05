@@ -1,0 +1,65 @@
+<body>
+  <nav class="navbar navbar-expand-md navbar-dark encabezado">
+    <div class="container-fluid">
+      <a href="" class="navbar-brand text-info fw-semibold fs-4 text-black">CursosGratis</a>
+      <a [routerLink]="['/cursos']" class="btn-volver text-end">Volver al Listado de Cursos</a>
+    </div>
+  </nav>
+  <p-header class="custom-header">
+    <div class="ui-g">
+      <div class="ui-g-12">
+        <h1 class="cabezera text-black">Alumnos Del Curso de {{ cursoNombre }}</h1>
+      </div>
+    </div>
+  </p-header>
+  <p-table
+    #dt1
+    [value]="alumnosMatriculados"
+    [breakpoint]="'960px'"
+    [tableStyle]="{'min-width': '50rem'}"
+    [globalFilterFields]="['dni','name', 'apellidos','email','telefono']"
+    [paginator]="true"
+    [rows]="5">
+    <ng-template pTemplate="caption">
+      <div class="flex" style="text-align: end">
+        <span class="p-input-icon-left ml-auto">
+          <i class="pi pi-search"></i>
+          <input pInputText
+                 type="text"
+                 (input)="onInputChange($event, dt1)"
+                 placeholder="Search keyword"
+                 style="text-align: center"
+          />
+        </span>
+      </div>
+    </ng-template>
+    <ng-template pTemplate="header">
+      <tr class="border border-3 border-black cabezeraTabla">
+        <th pSortableColumn="dni" style="width: 20%" >DNI <p-sortIcon  field="dni"></p-sortIcon></th>
+        <th pSortableColumn="name" style="width: 20%" >nombre <p-sortIcon  field="name"></p-sortIcon></th>
+        <th pSortableColumn="apellidos" style="width: 20%" >apellidos <p-sortIcon  field="apellidos"></p-sortIcon></th>
+        <th pSortableColumn="email" style="width: 20%">email <p-sortIcon   field="email"></p-sortIcon></th>
+        <th class="datatableHeader" style="width: 20%"  >telefono</th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-alumno>
+      <tr class="bg-dark-subtle border-2 border-black text-black cuerpo">
+        <td>{{alumno.dni}}</td>
+        <td>{{alumno.name}}</td>
+        <td>{{alumno.apellidos}}</td>
+        <td> {{alumno.email}}</td>
+        <td>{{alumno.telefono}}</td>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="summary">
+      <div class="d-flex justify-content-center w-100 color-red"  >
+        Usuarios Registrados a {{fechaFormateada}}
+      </div>
+    </ng-template>
+    <ng-template pTemplate="emptymessage">
+      <tr>
+        <td colspan="3">No customers found.</td>
+      </tr>
+    </ng-template>
+  </p-table>
+</body>
